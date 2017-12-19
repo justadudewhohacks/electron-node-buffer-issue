@@ -1,0 +1,15 @@
+{
+  "name": "electron-node-buffer-issue",
+  "version": "1.0.0",
+  "main": "bindings.js",
+  "scripts": {
+    "install": "node-gyp rebuild",
+    "electron-rebuild": "electron-rebuild -w myModule",
+    "electron-start": "electron main.js"
+  },
+  "dependencies": {
+    "nan": "^2.7.0",
+    "electron": "^1.7.8",
+    "electron-rebuild": "^1.6.0"
+  }
+}

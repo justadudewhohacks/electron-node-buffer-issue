@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <button onclick="run()"> Run </button>
+    <script>
+      var m = require('electron').remote.require('./');
+
+      function run() {
+        console.time('allocateBufferAndReturn')
+        for (var i = 0; i < 10; i++) {
+          var buf = m.allocateBufferAndReturn()
+        }
+        console.timeEnd('allocateBufferAndReturn')
+
+        console.time('allocateBufferButDoNotReturn')
+        for (var i = 0; i < 10; i++) {
+          var buf = m.allocateBufferButDoNotReturn()
+        }
+        console.timeEnd('allocateBufferButDoNotReturn')
+      }
+    </script>
+  </body>
+</html>
